@@ -24,3 +24,7 @@ PRODUCT_NAME := lineage_marble
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_GAPPS_ARCH := arm64
+
+# Matrixx
+MATRIXX_BUILD_TYPE := Official
+MATRIXX_MAINTAINER := KSSRAO
