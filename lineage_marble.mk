@@ -28,3 +28,6 @@ TARGET_GAPPS_ARCH := arm64
 # Matrixx
 MATRIXX_BUILD_TYPE := Official
 MATRIXX_MAINTAINER := KSSRAO
+
+# Gapps
+WITH_GAPPS := true
