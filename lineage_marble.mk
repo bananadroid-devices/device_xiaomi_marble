@@ -31,6 +31,7 @@ MATRIXX_MAINTAINER := KSSRAO
 
 # Gapps
 WITH_GAPPS := true
+EXTRA_GAPPS := true
 
 # Nuke AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
