@@ -350,4 +350,13 @@
     <!-- Default component for QR code scanner -->
     <string name="config_defaultQrCodeComponent" translatable="false">com.google.android.gms/.mlkit.barcode.ui.PlatformBarcodeScanningActivityProxy</string>
 
+    <!-- A list of apps that are allowed to have another instance on a device
+    in the clone profile. -->
+    <string-array name="cloneable_apps" translatable="false">
+    <item>com.whatsapp</item>
+    <item>org.telegram.messenger</item>
+    <item>com.instagram.android</item>
+    <item>com.google.android.gm</item>
+    </string-array>
+
 </resources>
