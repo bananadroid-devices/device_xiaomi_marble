@@ -402,6 +402,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarble \
+    AvoidAppsInCutoutOverlay \
     CarrierConfigResMarble \
     FrameworksResCommon \
     FrameworksResOverlayMarble \
