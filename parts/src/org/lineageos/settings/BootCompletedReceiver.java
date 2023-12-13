@@ -39,10 +39,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         DolbyUtils.getInstance(context);
 
         // Doze
-        // DozeUtils.checkDozeService(context);
+        DozeUtils.checkDozeService(context);
 
         // Pocket
-        // PocketService.startService(context);
+        PocketService.startService(context);
 
         // DisplayFeature
         ColorService.startService(context);
