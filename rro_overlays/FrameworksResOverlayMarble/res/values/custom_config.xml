@@ -12,32 +12,10 @@
      limitations under the License.
 -->
 <resources>
-    <!-- The list of components which should be automatically disabled for a specific device. -->
-    <string-array name="config_deviceDisabledComponents" translatable="false">
-        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicNotificationsSettingsActivity</item>
-        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSettingsActivity</item>
-        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSetupWizardActivity</item>
-        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryContentProvider</item>
-        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryActivity</item>
-    </string-array>
+    <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
+    <string name="config_netflixSpoofModel" translatable="false">23049PCD8G</string>
 
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_supportSmartPixels">true</bool>
-
-    <!-- Should we listen for fingerprints when the screen is off?  Devices
-         with a rear-mounted sensor want this, but certain devices have
-         the sensor embedded in the power key and listening all the time
-         causes a poor experience. -->
-    <bool name="config_fingerprintWakeAndUnlock">true</bool>
-
-    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
-    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/qcom-battery/fastchg_mode</string>
-
-    <!-- Expected value from fast charging status file  -->
-    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
-
-
-    <!-- Whether to enable Lineage Health Service -->
-    <bool name="config_lineageHealthSupported">true</bool>
 
 </resources>
