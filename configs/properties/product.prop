@@ -5,8 +5,7 @@ audio.offload.min.duration.secs=30
 media.stagefright.audio.deep=false
 
 # Blur
-ro.sf.blurs_are_expensive=1
-ro.surface_flinger.supports_background_blur=1
+persist.sys.sf.disable_blurs=1
 
 # Phantom process monitoring
 sys.fflag.override.settings_enable_monitor_phantom_procs=false
