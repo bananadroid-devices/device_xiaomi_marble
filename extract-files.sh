@@ -172,6 +172,13 @@ function blob_fixup() {
     vendor/lib64/libdlbdsservice.so | vendor/lib64/soundfx/libhwdap.so)
         "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
         ;;
+    vendor/lib/libcodec2_hidl@1.0.stock.so)
+        "${PATCHELF}" --set-soname "libcodec2_hidl@1.0.stock.so" "${2}"
+        "${PATCHELF}" --replace-needed "libcodec2_vndk.so" "libcodec2_vndk.stock.so" "${2}"
+        ;;
+    vendor/lib/libcodec2_vndk.stock.so)
+        "${PATCHELF}" --set-soname "libcodec2_vndk.stock.so" "${2}"
+        ;;
     esac
 }
 
