@@ -29,3 +29,6 @@ TARGET_GAPPS_ARCH := arm64
 
 # Gapps
 WITH_GAPPS := true
+
+# Official
+BANANA_MAINTAINER := KSSRAO
