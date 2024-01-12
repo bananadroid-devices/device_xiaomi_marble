@@ -8,4 +8,8 @@
     <string name="config_batteryRemainingCapacityNode">/sys/class/power_supply/battery/charge_full</string>
     <string name="config_batteryDesignCapacityNode">/sys/class/power_supply/battery/charge_full_design</string>
     <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
+
+    <!-- Whether device supports increased touch sensitvity -->
+    <bool name="config_supportTouchPollingMode">true</bool>
+    
 </resources>
