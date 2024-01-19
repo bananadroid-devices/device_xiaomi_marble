@@ -23,6 +23,7 @@ import org.lineageos.settings.dolby.DolbyUtils;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.doze.PocketService;
+import org.lineageos.settings.gestures.GestureUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.touch.HighTouchPollingService;
@@ -35,38 +36,46 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        ThermalUtils.startService(context);
+        Log.i(TAG, "Received intent: " + intent.getAction());
 
-        Log.i(TAG, "Boot completed");
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
+        }
+    }
 
-        // Dolby Atmos
-        DolbyUtils.getInstance(context);
-
-        // Doze
-        DozeUtils.checkDozeService(context);
-
-        // Pocket
-        PocketService.startService(context);
-
-        // DisplayFeature
+    private static void onLockedBootCompleted(Context context) {
+        // Services that don't require reading from data.
         ColorService.startService(context);
-
-        // NFC
+        AodBrightnessService.startService(context);
+        PocketService.startService(context);
         NfcCameraService.startService(context);
         HighTouchPollingService.startService(context);
         TouchOrientationService.startService(context);
+        overrideHdrTypes(context);
+    }
 
-        // AOD
-        AodBrightnessService.startService(context);
-
-
-        // Refresh Rate
+    private static void onBootCompleted(Context context) {
+        // Data is now accessible (user has just unlocked).
+        DolbyUtils.getInstance(context).onBootCompleted();
+        DozeUtils.checkDozeService(context);
         RefreshUtils.initialize(context);
+        ThermalUtils.startService(context);
 
-        // Override HDR types
-        final DisplayManager displayManager = context.getSystemService(DisplayManager.class);
-        displayManager.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
+        // Gesture: Double tap FPS
+        if (GestureUtils.isFpDoubleTapEnabled(context)) {
+            GestureUtils.setFingerprintNavigation(true);
+        }
+    }
+
+    private static void overrideHdrTypes(Context context) {
+        // Override HDR types to enable Dolby Vision
+        final DisplayManager dm = context.getSystemService(DisplayManager.class);
+        dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
                 HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
                 HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
     }
