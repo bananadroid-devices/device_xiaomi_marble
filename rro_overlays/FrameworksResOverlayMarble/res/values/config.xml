@@ -730,4 +730,8 @@
 
     <!-- True if the device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- The name of the package that will hold the dialer role by default. -->
+    <string name="config_defaultDialer" translatable="false">com.google.android.dialer</string>
+
 </resources>
