@@ -120,7 +120,8 @@ BOARD_KERNEL_CMDLINE := \
     kpti=off \
     swinfo.fingerprint=$(SUPERIOR_VERSION) \
     mtdoops.fingerprint=$(SUPERIOR_VERSION) \
-    allow_file_spec_access
+    allow_file_spec_access \
+    irqaffinity=0-3
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
