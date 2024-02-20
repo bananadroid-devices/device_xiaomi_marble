@@ -44,6 +44,16 @@
         <library name="volume_listener" path="libvolumelistener.so"/>
         <library name="audiosphere" path="libasphere.so"/>
         <library name="shoebox" path="libshoebox.so"/>
+        <library name="misoundfx" path="libmisoundfx.so"/>
+        <!--DOLBY DAP-->
+        <library name="dap" path="libhwdap.so"/>
+        <!--DOLBY END-->
+        <!--DOLBY GAME-->
+        <library name="gamedap" path="libswgamedap.so"/>
+        <!--DOLBY END-->
+        <!--DOLBY VQE-->
+        <library name="vqe" path="libswvqe.so"/>
+        <!--DOLBY END-->
 	<library name="v4a_re" path="libv4a_re.so"/>
         <!--DOLBY DAP-->
         <library name="dap" path="libhwdap.so"/>
@@ -103,8 +113,18 @@
         <effect name="alarm_helper" library="volume_listener" uuid="09f303e2-0590-11e5-8fdb-0025b32654a0"/>
         <effect name="voice_helper" library="volume_listener" uuid="0ace5c08-0590-11e5-ae9e-0025b32654a0"/>
         <effect name="notification_helper" library="volume_listener" uuid="0b776dde-0590-11e5-81ba-0025b32654a0"/>
+        <!--DOLBY DAP-->
+        <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
+        <!--DOLBY END-->
+        <!--DOLBY GAME-->
+        <effect name="gamedap" library="gamedap" uuid="3783c334-d3a0-4d13-874f-0032e5fb80e2"/>
+        <!--DOLBY END-->
+        <!--DOLBY VQE-->
+        <effect name="vqe" library="vqe" uuid="64a0f614-7fa4-48b8-b081-d59dc954616f"/>
+        <!--DOLBY END-->
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
+        <effect name="misoundfx" library="misoundfx" uuid="5b8e36a5-144a-4c38-b1d7-0002a5d5c51b"/>
 	<effect name="v4a_standard_re" library="v4a_re" uuid="90380da3-8536-4744-a6a3-5731970e640f"/>
         <!--DOLBY DAP-->
         <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
@@ -125,16 +145,12 @@
             <apply effect="dlb_music_listener"/> <!--DOLBY ADD-->
         </stream>
         <stream type="ring">
-            <apply effect="ring_helper"/>
         </stream>
         <stream type="alarm">
-            <apply effect="alarm_helper"/>
         </stream>
         <stream type="voice_call">
-            <apply effect="voice_helper"/>
         </stream>
         <stream type="notification">
-            <apply effect="notification_helper"/>
         </stream>
     </postprocess>
     <preprocess>

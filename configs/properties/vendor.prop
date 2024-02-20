@@ -169,6 +169,7 @@ ro.audio.resampler.psd.enable_at_samplerate=44100
 ro.audio.resampler.psd.stopband=179
 ro.audio.resampler.psd.halflength=408
 ro.audio.resampler.psd.tbwcheat=99
+vendor.audio.dolby.ds2.enabled=true
 
 # Bluetooth
 bluetooth.hardware.power.idle_cur_ma=6
@@ -277,7 +278,6 @@ persist.vendor.dc_backlight.enable=false
 persist.vendor.dc_backlight.threshold=0
 
 # Dolby
-ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1
 vendor.audio.dolby.ds2.enabled=true
 vendor.audio.dolby.ds2.hardbypass=false
 
