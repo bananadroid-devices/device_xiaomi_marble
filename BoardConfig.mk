@@ -42,6 +42,9 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# HWUI
+HWUI_COMPILE_FOR_PERF := true
+
 # Boot control
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
