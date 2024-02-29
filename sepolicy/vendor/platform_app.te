@@ -15,6 +15,10 @@ allow platform_app hal_xiaomi_camera_hwservice:hwservice_manager { find };
 
 binder_call(platform_app, hal_camera_default)
 
+allow platform_app hal_dms_hwservice:hwservice_manager find;
+binder_call(platform_app, hal_dms_default)
+get_prop(platform_app, audio_config_prop)
+
 # Properties
 allow platform_app vendor_display_prop:file read;
 get_prop(platform_app, vendor_camera_sensor_prop)

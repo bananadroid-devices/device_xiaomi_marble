@@ -651,3 +651,7 @@ on property:sys.volume.stream.bluetoothsco=*
 
 # Enable suspend to RAM
     write /sys/power/mem_sleep "deep"
+
+# Dolby
+    mkdir /data/vendor/dolby 0770 media media
+    mkdir /data/vendor/multimedia 0775 system system
