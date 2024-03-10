@@ -163,13 +163,12 @@ vendor.audio.usb.out.period_count=2
 vendor.audio_hal.period_size=120
 vendor.audio_hal.period_multiplier=1
 vendor.audio.adm.buffering.ms=2
-ro.audio.resampler.psd.enable_at_samplerate=44100
-ro.audio.resampler.psd.stopband=132
-ro.audio.resampler.psd.halflength=960
-ro.audio.resampler.psd.cutoff_percent=98
-ro.audio.resampler.psd.tbwcheat=0
-ro.audio.usb.period_us=20375
+persist.bluetooth.sbc_hd_higher_bitrate=1
 af.resampler.quality=7
+ro.audio.resampler.psd.enable_at_samplerate=44100
+ro.audio.resampler.psd.stopband=179
+ro.audio.resampler.psd.halflength=408
+ro.audio.resampler.psd.tbwcheat=99
 vendor.audio.dolby.ds2.enabled=true
 
 # Bluetooth
@@ -201,7 +200,6 @@ persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
 persist.vendor.qcom.bluetooth.scram.enabled=false
 persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 ro.vendor.bluetooth.csip_qti=true
-persist.bluetooth.sbc_hd_higher_bitrate=1
 
 # Camera
 camera.disable_zsl_mode=true
