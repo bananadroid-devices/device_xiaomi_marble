@@ -2946,6 +2946,20 @@ vendor/etc/thermal-videochat.conf
 vendor/etc/thermal-yuanshen.conf
 vendor/etc/thermald-devices.conf
 
+# Thermal engine
+vendor/bin/mi_thermald
+vendor/bin/thermal-engine-v2
+vendor/etc/init/hw/init.mi_thermald.rc
+vendor/etc/init/init_thermal-engine-v2.rc
+
+# Thermal (limits-hal) - from LA.QSSI.14.0.r1
+system_ext/lib64/vendor.qti.hardware.limits@1.0.so|fb45ce476a15eeb252469e6995f470f7f493d825
+system_ext/lib64/vendor.qti.hardware.limits@1.1.so|05e5962c4ccb964197e46721853f717a7ca13982
+
+# Thermal Service Client
+system_ext/lib/libthermalclient.qti.so
+system_ext/lib64/libthermalclient.qti.so
+
 # Time services
 vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
